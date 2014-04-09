@@ -18,6 +18,7 @@ namespace SnakesOnAGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ListVector 
 
         public Game1()
         {

@@ -18,10 +18,6 @@ namespace SnakesOnAGame
     }
 #endif
 }
-            class Game 1 :
-            {
-                List<Vector2>Snake = new List<Vector2>();
-                public void Load Content(      )
-                }
+ 
                
 
