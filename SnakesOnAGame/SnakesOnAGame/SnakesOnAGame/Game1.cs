@@ -18,11 +18,12 @@ namespace SnakesOnAGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        ListVector 
-
+        List <Vector2> snake = new List <Vector2>();
+            
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+
             Content.RootDirectory = "Content";
         }
 
@@ -82,7 +83,9 @@ namespace SnakesOnAGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Gray);
+            spriteBatch.Draw(FoodTexture, Food[0], colors[i]);
+            spriteBatch.Draw(snakeTexture, snake[i] * 10, colors[i]);
 
             // TODO: Add your drawing code here
 
