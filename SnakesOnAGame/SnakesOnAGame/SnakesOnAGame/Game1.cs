@@ -37,7 +37,10 @@ namespace SnakesOnAGame
         {
             // TODO: Add your initialization logic here
 
+
+
             base.Initialize();
+
         }
 
         /// <summary>
@@ -72,20 +75,21 @@ namespace SnakesOnAGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+           
             // TODO: Add your update logic here
 
+            KeyboardState kb = Keyboard.GetState();
             base.Update(gameTime);
-        }
 
+            if (Kb.IsKeyDown(Keys.Up));
+        }
+        
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Gray);
-            spriteBatch.Draw(FoodTexture, Food[0], colors[i]);
-            spriteBatch.Draw(snakeTexture, snake[i] * 10, colors[i]);
 
             // TODO: Add your drawing code here
 
