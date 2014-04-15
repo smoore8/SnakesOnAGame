@@ -65,6 +65,8 @@ namespace SnakesOnAGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            snakeTexture = Content.Load<Texture2D>(@"SnakeTexture");
+
             Food = new Vector2(45, 29);
             snake.Add(new Vector2(40, 24));
 
@@ -124,21 +126,16 @@ namespace SnakesOnAGame
                 velocity = new Vector2(0, 1);
             }
 
-            if (kb.IsKeyDown(Keys.Left))
+            if (kb.IsKeyDown(Keys.Left) && velocity.X != 1)
             {
                 velocity = new Vector2(-1, 0);
             }
 
-            if (kb.IsKeyDown(Keys.Right))
+            if (kb.IsKeyDown(Keys.Right)&& velocity.X != 0)
             {
                 velocity = new Vector2(1, 0);
 
             }
-
-
-
-
-
 
             if (snake[0] == Food)
             {
@@ -165,14 +162,17 @@ namespace SnakesOnAGame
 
 
             spriteBatch.Begin();
+
             for (int i = 0; i < snake.Count; i++)
             {
-                spriteBatch.Draw(FoodTexture, Food * 10, Color.White);
+                spriteBatch.Draw(snakeTexture, snake[i] * 10, Color.Black);
+            }
 
-                // TODO: Add your drawing code here
+             spriteBatch.Draw(snakeTexture, Food * 10, Color.Black);
+             
+            spriteBatch.End();
 
                 base.Draw(gameTime);
-            }
         }
     }
 }
