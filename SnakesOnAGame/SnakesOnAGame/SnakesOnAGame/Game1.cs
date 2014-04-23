@@ -24,7 +24,7 @@ namespace SnakesOnAGame
         Rectangle currentSquare;
 
         float snakemovetimer = 0f;
-        float snakemovetime = 20f;
+        float snakemovetime = 100f;
 
         int playerScore = 0;
 
@@ -113,6 +113,13 @@ namespace SnakesOnAGame
                 snakemovetimer = 0f;
             }
 
+            if (snake[0].X <= 0 || snake[0].X > 800/10)
+            {
+                snake.Clear();
+                snake.Add(new Vector2(40, 24));
+                Food = new Vector2(45, 29);
+                velocity = new Vector2(0, -1);
+            }
 
             KeyboardState kb = Keyboard.GetState();
 
@@ -132,7 +139,7 @@ namespace SnakesOnAGame
             }
 
             if (kb.IsKeyDown(Keys.Right) && velocity.X != -1)
-
+ 
             {
                 velocity = new Vector2(1, 0);
 
