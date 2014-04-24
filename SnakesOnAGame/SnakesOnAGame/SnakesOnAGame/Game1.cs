@@ -113,7 +113,7 @@ namespace SnakesOnAGame
                 snakemovetimer = 0f;
             }
 
-            if (snake[0].X <= 0 || snake[0].X > 800/10)
+            if (snake[0].X <= 0 || snake[0].X > 800/10 || snake[0].Y > 480/10 || snake[0].Y < 0) 
             {
                 snake.Clear();
                 snake.Add(new Vector2(40, 24));
@@ -166,8 +166,7 @@ namespace SnakesOnAGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            GraphicsDevice.Clear(Color.Red);
 
             spriteBatch.Begin();
 
